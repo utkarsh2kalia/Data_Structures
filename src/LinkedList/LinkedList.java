@@ -22,9 +22,10 @@ public class LinkedList {
         }
         System.out.print("null");
     }
-    public static void main(String[] args) {
+    // function to create a list
+    public static Node createList(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter size of linked list");
+        System.out.println("Enter size of linked list:");
         int n = sc.nextInt();
 
         Node head = new Node(sc.nextInt());
@@ -33,7 +34,24 @@ public class LinkedList {
             head.next = new Node(sc.nextInt());
             head = head.next;
         }
-        printAllNodes(ref);
+        return ref;
+
+    }
+    public static Node makelist(int arr[])
+    {
+        Node ref = new Node(0);
+        Node head = ref;
+        for(int num: arr){
+            ref.next = new Node(num);
+            ref = ref.next;
+        }
+        return head.next;
+
+    }
+    public static void main(String[] args) {
+        Node head = createList();
+
+        printAllNodes(head);
 
     }
 }

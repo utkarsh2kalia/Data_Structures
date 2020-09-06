@@ -3,8 +3,10 @@ package LinkedList;
 import java.util.Scanner;
 //import LinkedList.LinkedList;
 
+import static LinkedList.LinkedList.createList;
 import static LinkedList.LinkedList.printAllNodes;
 //import static LinkedList.ReverseLinkedList.reverseList;
+
 
 public class ReverseKnodes {
     public static Node reverseKnodes(Node head, int k)
@@ -31,20 +33,8 @@ public class ReverseKnodes {
 
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter size of linked list:");
-        int n = sc.nextInt();
-//        System.out.println("Enter the value of k");
-//        int k = sc.nextInt();
 
-        Node head = new Node(sc.nextInt());
-        Node ref = head;
-        while(--n!=0) {
-            head.next = new Node(sc.nextInt());
-            head = head.next;
-        }
-        //head = reverseList(ref, null, ref);
-//        printAllNodes(reverseKnodes(head, k));
-        printAllNodes(reverseKnodes(ref,3));
+        Node head = createList();
+        printAllNodes(reverseKnodes(head,3));
     }
 }

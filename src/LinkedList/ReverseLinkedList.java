@@ -2,6 +2,8 @@ package LinkedList;
 
 import java.util.Scanner;
 
+import static LinkedList.LinkedList.*;
+
 //class Node {
 //    int data;
 //    Node next;
@@ -13,6 +15,15 @@ import java.util.Scanner;
 
 //}
 public class ReverseLinkedList {
+    public static Node reverseList(Node head) {
+        if (head == null || head.next == null)
+            return head;
+        Node p = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return p;
+    }
+
     public static Node reverseList(Node curr, Node prev, Node head)
     {
         if(curr == null){
@@ -21,6 +32,7 @@ public class ReverseLinkedList {
             return head;
         }
         // recur for next and send current to prev
+        // storing in head will be useful for the last call
         head = reverseList(curr.next , curr, head);
         //fix the curr.next to point to prev to reverse it
         curr.next = prev;
@@ -28,30 +40,17 @@ public class ReverseLinkedList {
 
 
     }
-    public static void printAllNodes(Node head)
-    {
-        while(head !=null)
-        {
-            System.out.print(head.data+"->");
-            head = head.next;
-        }
-        System.out.print("null");
-    }
+
+
 
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter size of linked list");
-        int n = sc.nextInt();
-
-        Node head = new Node(sc.nextInt());
-        Node ref = head;
-        while(--n!=0) {
-            head.next = new Node(sc.nextInt());
-            head = head.next;
-        }
-        head = reverseList(ref, null, ref);
-        printAllNodes(head);
+        int[] arr={1,2,3,4,5}         ;
+        Node head = makelist(arr);
+         Node ref = head;
+        //printAllNodes(reverseList(head, null, head));
+        System.out.println();
+        printAllNodes(reverseList(ref));
 
     }
 
