@@ -2,7 +2,7 @@ package StacksAndQueues;
 
 import java.util.Stack;
 
-public class StacksandQueues {
+public class BalancingBrackets {
     public static boolean isValid(String exp) {
 
         if(exp.length()%2!=0)
