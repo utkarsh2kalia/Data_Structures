@@ -4,6 +4,8 @@ import org.w3c.dom.Node;
 
 import java.util.Stack;
 
+import static Trees.InorderTraversal.maketree;
+
 public class CheckIftreeisBST {
     // using stack
     public static boolean isBST(TreeNode root) {
@@ -46,7 +48,9 @@ public class CheckIftreeisBST {
     }
 
     public static void main(String[] args) {
-        
+        int keys[] = {2,3,1};
+
+        System.out.println(isBST(maketree(keys)));
     }
 }
 
