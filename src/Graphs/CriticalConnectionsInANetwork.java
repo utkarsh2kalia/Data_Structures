@@ -29,7 +29,9 @@ public class CriticalConnectionsInANetwork {
         boolean[] visited = new boolean[n];
         int []timeStampAtThatNode = new int[n];
         criticalConnectionsUtil(graph, -1, 0, timer, visited, results, timeStampAtThatNode);
+        System.out.println(Arrays.toString(timeStampAtThatNode));
         return results;
+
     }
 
 
@@ -37,12 +39,14 @@ public class CriticalConnectionsInANetwork {
         visited[node] = true;
         timeStampAtThatNode[node] = timer[0]++;
         int currentTimeStamp = timeStampAtThatNode[node];
-
         for(int oneNeighbour : graph[node]) {
             if(oneNeighbour == parent) continue;
             if(!visited[oneNeighbour]) criticalConnectionsUtil(graph, node, oneNeighbour, timer, visited, results, timeStampAtThatNode);
             timeStampAtThatNode[node] = Math.min(timeStampAtThatNode[node], timeStampAtThatNode[oneNeighbour]);
-            if(currentTimeStamp < timeStampAtThatNode[oneNeighbour]) results.add(Arrays.asList(node, oneNeighbour));
+            if(currentTimeStamp < timeStampAtThatNode[oneNeighbour]) {
+                results.add(Arrays.asList(node, oneNeighbour));
+
+            }
         }
 
 
