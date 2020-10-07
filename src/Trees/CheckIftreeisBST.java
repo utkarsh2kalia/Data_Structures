@@ -10,6 +10,7 @@ public class CheckIftreeisBST {
     // using stack
     public static boolean isBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
+        // initial value to compare the leftmost node with, consider it as the root value for initial cause
         double prev = -Double.MAX_VALUE;
 
         while (!stack.isEmpty() && root != null) {
