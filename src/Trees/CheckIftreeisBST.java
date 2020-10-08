@@ -13,7 +13,7 @@ public class CheckIftreeisBST {
         // initial value to compare the leftmost node with, consider it as the root value for initial cause
         double prev = -Double.MAX_VALUE;
 
-        while (!stack.isEmpty() && root != null) {
+        while (!stack.isEmpty() || root != null) {
             // move left
             while (root != null) {
                 stack.push(root);
@@ -49,7 +49,7 @@ public class CheckIftreeisBST {
     }
 
     public static void main(String[] args) {
-        int keys[] = {2,3,1};
+        int keys[] = {2,3,1,1,1,1,1,1,5,4,4,3,3,3};
 
         System.out.println(isBST(maketree(keys)));
     }

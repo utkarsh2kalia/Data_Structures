@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
+// Given an array find Kth smallest element in it
 public class KthSmallestElementInArrayusingMaxHeap {
     public static int kthsmallestelem(List<Integer> list,int k){
 

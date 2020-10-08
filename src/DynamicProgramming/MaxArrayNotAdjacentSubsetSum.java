@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 public class MaxArrayNotAdjacentSubsetSum {
 
-
+// sum of numbers taht are not adjacent to each other, of size 3
 
 
         // Complete the maxSubsetSum function below.
