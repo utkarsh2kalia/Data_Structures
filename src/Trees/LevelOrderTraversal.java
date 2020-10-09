@@ -21,7 +21,7 @@ public class LevelOrderTraversal {
                 // take the front element out
                 TreeNode curr = qi.poll();
                 // add the data to list
-                list.add(curr.val);
+                list.add(curr.data);
                 if(curr.left!=null)
                     qi.add(curr.left);
                 if(curr.right!=null)
