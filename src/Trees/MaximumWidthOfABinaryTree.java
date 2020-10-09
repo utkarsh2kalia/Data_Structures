@@ -7,7 +7,12 @@ import java.util.Queue;
 
 import static Trees.InorderTraversal.maketree;
 import static Trees.LevelOrderTraversal.levelorder;
-
+//Given a binary tree, write a function to get the maximum width of the given tree.
+//        The maximum width of a tree is the maximum width among all levels.
+//        The width of one level is defined as the length between the end-nodes (the leftmost and right most non-null nodes in the level,
+//        where the null nodes between the end-nodes are also counted into the length calculation.
+//
+//        It is guaranteed that the answer will in the range of 32-bit signed integer.
 public class MaximumWidthOfABinaryTree {
     public static int widthOfBinaryTree(TreeNode root) {
         if(root == null) return 0;
@@ -48,9 +53,9 @@ public class MaximumWidthOfABinaryTree {
     }
 
     public static void main(String[] args) {
-        int arr[] = {16, 26, 27,11, 33,100,63,45};
+        int arr[] = {4,3,2,6,5,7,1};
         TreeNode root = maketree(arr);
-        System.out.println(levelorder(root));
+//        System.out.println(levelorder(root));
         System.out.println(widthOfBinaryTree(root));
     }
 }
