@@ -20,11 +20,12 @@ public class MaximumWzidthOfABinaryTree2 {
         // we add index to list only when it is the starting index
         if (level == list.size()) list.add(index);
         max = Math.max(max, index + 1 - list.get(level));
+        System.out.println(max);
         helper(root.left, level + 1, index * 2, list);
         helper(root.right, level + 1, index * 2 + 1, list);
     }
 
-    public static void main(String[] args) {
+    public static void  main(String[] args) {
         int arr[] = {4,3,2,6,5,7,1};
         MaximumWzidthOfABinaryTree2 obj = new MaximumWzidthOfABinaryTree2();
         System.out.println(obj.widthOfBinaryTree2(maketree(arr)));

@@ -22,7 +22,7 @@ public class DiameterOfATree {
 //
 
     int max = 0;
-
+// we are counting the number of edges in this question
     public int diameterofBinaryTree(TreeNode root) {
         maxDepth(root);
         return max;
@@ -33,9 +33,9 @@ public class DiameterOfATree {
 
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
-
+//        calculate diameter "through" the current node
         max = Math.max(max, left + right);
-
+        // important - return height of subtree rooted at current node
         return Math.max(left, right) + 1;
     }
     public static void main(String[] args) {

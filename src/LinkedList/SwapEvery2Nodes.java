@@ -7,7 +7,7 @@ class ListNode{
         this.val = val;
         next = null;
     }
-    public static ListNode makeList(int arr[])
+    public static ListNode makeList(int[] arr)
     {
         ListNode ref = new ListNode(0);
         ListNode head = ref;

@@ -9,6 +9,7 @@ package Trees;
 //        2   2
 //        / \ / \
 //        3  4 4  3
+// Same as symmetric tree
 public class MirrorTree {
     public boolean isSymmetric(TreeNode root) {
 

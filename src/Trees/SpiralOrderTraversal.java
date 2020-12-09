@@ -43,7 +43,7 @@ public class SpiralOrderTraversal {
     }
 
     public static void main(String[] args) {
-        int arr[] = {3,2,1,3,4,5,6,54,3,31,2};
+        int arr[] = {3,9,20,1,5,15,7};
         System.out.println(zigzagLevelOrder(maketree(arr)));
     }
 }

@@ -1,6 +1,7 @@
 package Trees;
 
 public class InvertBinaryTree {
+    //interchange the left and right subtree of tree
     public TreeNode invertTree(TreeNode root) {
 
         if(root == null)

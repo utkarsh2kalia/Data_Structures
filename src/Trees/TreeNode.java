@@ -1,14 +1,16 @@
 package Trees;
 
-import com.sun.source.tree.Tree;
+
 
 public class TreeNode {
-    TreeNode left, right;
-    int data;
-    TreeNode(int data){
-        this.data = data;
+    public TreeNode left, right;
+    public int data;
+    public TreeNode(int val){
+        this.data = val;
+        left  = null;
+        right = null;
     }
-    TreeNode(){
+    public TreeNode(){
         left  = null;
         right = null;
     }

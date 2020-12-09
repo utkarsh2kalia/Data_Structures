@@ -13,6 +13,7 @@ public class CountSetBitsinInteger {
     public static void main(String[] args) {
         int n = 16;
         System.out.println(n+" in binary is "+ Integer.toBinaryString(n));
+//        System.out.println(n-1+" in binary is "+ Integer.toBinaryString(n&(n-1)));
         System.out.println("The number of set bits in "+n+ " is " +countsetbits(n));
     }
 }

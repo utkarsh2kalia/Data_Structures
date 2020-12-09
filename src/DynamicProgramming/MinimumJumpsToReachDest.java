@@ -19,7 +19,9 @@ public class MinimumJumpsToReachDest {
     public static  int jump(int[] A) {
         int jumps = 0, curEnd = 0, curFarthest = 0;
         for (int i = 0; i < A.length - 1; i++) {
+            // curFarthest stores the farthest we can go for the current element
             curFarthest = Math.max(curFarthest, i + A[i]);
+            // current end stores the length we have to go for the current chosen element
             if (i == curEnd) {
                 jumps++;
                 curEnd = curFarthest;
