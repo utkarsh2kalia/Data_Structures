@@ -10,6 +10,7 @@ public class BoundaryTraversal {
     }
 
     public void addLeaves(List<Integer> res, TreeNode root) {
+        // add the leaves by moving left. if the current node is leaf add the value to the list
         if (isLeaf(root)) {
             res.add(root.data);
         } else {
