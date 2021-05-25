@@ -43,7 +43,7 @@ public class DuplicateElementInArray {
 
     public static void main(String[] args)
     {
-        int[] A = { 1, 2, 3, 4, 4 };
+        int[] A = { 1, 2, 3, 4, 2 };
         System.out.println("The duplicate element using xor is " + findDuplicateusingxor(A));
         System.out.println("The duplicate element is " + findDuplicate(A));
     }

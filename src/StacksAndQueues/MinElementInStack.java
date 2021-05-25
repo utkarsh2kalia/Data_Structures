@@ -2,9 +2,7 @@ package StacksAndQueues;
 
 import java.util.Stack;
 
-public class MinElementInStack {
-
-    // Java program to implement a stack that supports
+// Java program to implement a stack that supports
 // getMinimum() in O(1) time and O(1) extra space.
 
 //   1. while pushing
@@ -15,8 +13,10 @@ public class MinElementInStack {
 //   2. while popping
 //    {if pop<min means pop is not the real elemnt, in this case real element = min, newmin = 2*min - poppped}
 
-    // A user defined stack that supports getMin() in
+// A user defined stack that supports getMin() in
 // addition to push() and pop()
+public class MinElementInStack {
+
 
         Stack<Integer> s;
         Integer minEle;

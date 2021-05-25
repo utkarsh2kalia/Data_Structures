@@ -12,47 +12,59 @@ public class DecodeString {
 
     public static String decode_string(String s){
         // create 2 stacks to store the integer and other values
-        String res = "";
-        Stack<Integer> countStack = new Stack<>();
-        Stack<String> resStack = new Stack<>();
+        Stack<Integer> count = new Stack<Integer>();
+        Stack<StringBuilder> res = new Stack<StringBuilder>();
+        char ch[] = s.toCharArray();
         int idx = 0;
-        while (idx < s.length()) {
-            // if the current character is a digit, get the number from it and store in countstack
-            if (Character.isDigit(s.charAt(idx))) {
-                int count = 0;
-                while (Character.isDigit(s.charAt(idx))) {
-                    count = 10 * count + (s.charAt(idx) - '0');
-                    idx++;
+        StringBuilder currentString = new StringBuilder();
+
+        while(idx < s.length()){
+
+            if(Character.isDigit(ch[idx])){
+                int num = 0;
+                while(Character.isDigit(ch[idx])){
+
+                    num = num*10+ (ch[idx++] - '0');
+
                 }
-                countStack.push(count);
-            }
-            // if the character is an opening brace, push it in the
-            else if (s.charAt(idx) == '[') {
-                // add the result to stack
-                resStack.push(res);
-                res = "";
-                idx++;
-            }
-            else if (s.charAt(idx) == ']') {
-                // pop out the character from stack
-                StringBuilder temp = new StringBuilder (resStack.pop());
-                //pop out the repeat times
-                int repeatTimes = countStack.pop();
-                // add the string to temp the count times
-                for (int i = 0; i < repeatTimes; i++) {
-                    temp.append(res);
-                }
-                // store temp in string
-                res = temp.toString();
-                idx++;
-            }
-            else {
-                res += s.charAt(idx++);
-            }
-        }
-        return res;
+                count.push(num);
 
             }
+            else if(ch[idx] == '[')
+            {
+                // for the first iteration "" will be pushed
+                res.push(currentString);
+
+                currentString = new StringBuilder();
+                idx++;
+            }
+
+            else if(ch[idx] == ']'){
+
+
+                StringBuilder decodedString = res.pop();
+                int repeatTimes = count.pop();
+
+                for(int i = 0; i<repeatTimes; i++)
+                {
+                    decodedString.append(currentString);
+                }
+
+                currentString = decodedString;
+                idx++;
+
+            }
+            else
+            {
+                currentString.append(ch[idx++]);
+            }
+
+        }
+        return currentString.toString();
+    }
+
+
+
 
     public static void main(String[] args) {
         String s = "3[a]2[bc]";

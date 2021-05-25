@@ -14,7 +14,7 @@ public class PreOrderTraversalIterative {
         while(!st.isEmpty()){
             TreeNode node = st.pop();
             preorder.add(node.data);
-            if(node.right!=null) st.push(node.right);
+            if(node.right!=null) st.push(node.right);// means right will be operated later LIFO
             if(node.left!=null) st.push(node.left);
         }
 

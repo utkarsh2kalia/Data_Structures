@@ -26,7 +26,7 @@ public class MergeKsortedLinkedLists2 {
             list1.next = merge2Lists(list1.next, list2);
             return list1;
         } else {
-            list2.next = merge2Lists(list2.next, list1);
+            list2.next = merge2Lists(list1, list2.next);
             return list2;
         }
     }

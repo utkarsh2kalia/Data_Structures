@@ -25,11 +25,12 @@ public class SerializeAndDeserializeATree {
         if(root == null)
             return str.append("#");
         str.append(root.data).append(",");
+        // remember to append , at the end of left other wise there will be no comma after #
         serializer(str, root.left).append(",");
         serializer(str, root.right);
         return str;
     }
-    public static TreeNode deserializer(Queue<String> q)
+    public static TreeNode deserializer(Queue<String> q) // retrieved as queue
     {
         String s = q.poll();
         if(s.equalsIgnoreCase("#"))

@@ -2,6 +2,9 @@ package Trees;
 
 import com.sun.source.tree.Tree;
 
+import java.io.EOFException;
+import java.io.IOException;
+
 import static Trees.InorderTraversal.inordertraversal;
 import static Trees.InorderTraversal.maketree;
 
@@ -23,7 +26,7 @@ import static Trees.InorderTraversal.maketree;
 //        /  \      \
 //        7    2      1
 //        return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
-public class BinaryTreePathSum {
+public class BinaryTreePathSum{
     public static boolean sumpath(TreeNode root, int sum){
         if(root == null)
             return false;

@@ -24,8 +24,25 @@ public class PeakElementInArray {
             return nums.length-1;
         return 0;
     }
+
+    static int MissingNumber(int array[], int n) {
+        // Your Code Here
+
+        int xor = 0;
+        for(int num:array){
+            xor^=xor;
+        }
+
+        for(int i = 1; i<=n;i++)
+            xor^=i;
+
+        return xor;
+
+
+    }
     public static void main(String[] args) {
-        int arr[] = {1, 2, 1, 3, 5, 6, 4};
+        int arr[] = {1, 2, 3,4,5,6,7,8,10};
+        System.out.println(MissingNumber(arr, 10));
         System.out.println("Index:"+findPeakElement(arr)+" ");
         System.out.println("Index:"+findPeakElement2(arr)+" ");
     }

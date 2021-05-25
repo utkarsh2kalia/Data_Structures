@@ -23,29 +23,36 @@ public class SlidingWindowMaximumMathod2 {
     public static int[] maximumineachwindow(int nums[], int k)
     {
         int n = nums.length;
-        if (n * k == 0) return new int[0];
-        if (k == 1) return nums;
+        // means any of n or k is 0 we return empty array
+        if(n * k ==0)
+            return new int[0];
+        if(k ==1) // window size is 1, then the number itself is maximum, so return it
+            return nums;
 
-        int [] left = new int[n];
+        int [] left = new int[n];// will store maximum elements from left size in each window
         left[0] = nums[0];
-        int [] right = new int[n];
-        right[n - 1] = nums[n - 1];
-        for (int i = 1; i < n; i++) {
-            // from left to right
-            if (i % k == 0) left[i] = nums[i];  // block_start
-            else left[i] = Math.max(left[i - 1], nums[i]);
 
-            // from right to left
-            int j = n - i - 1;
-            if ((j + 1) % k == 0) right[j] = nums[j];  // block_end
-            else right[j] = Math.max(right[j + 1], nums[j]);
+        int[] right = new int[n];
+        right[n-1] = nums[n-1];
+
+        for(int i =1; i<n; i++){
+            // for the starting of new window
+            if(i%k == 0) left[i] = nums[i];
+            else
+                left[i] = Math.max(left[i-1], nums[i]);
+
+            // right to left
+            int j = n - i - 1; // start from the second last element
+            if((j+1)%k == 0)// block end
+                right[j] = nums[j];
+            else
+                right[j] = Math.max(right[j+1], nums[j]);
         }
-
-        int [] output = new int[n - k + 1];
-        for (int i = 0; i < n - k + 1; i++)
-            output[i] = Math.max(left[i + k - 1], right[i]);
-
+        int[] output = new int[n - k + 1];
+        for(int i = 0; i<n - k+1; i++)
+            output[i] = Math.max(left[i+k-1], right[i]);
         return output;
+
     }
 
     public static void main(String[] args) {

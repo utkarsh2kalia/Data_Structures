@@ -22,11 +22,11 @@ public class BooyerMooreMajority2 {
 
         for(int num: arr ){
             if(candidate1 != null && candidate1 == num){
-                candidate1 = num;
+//                candidate1 = num;
                 count1++;
             }
             else if(candidate2 != null && candidate2 == num){
-                candidate2 = num;
+//                candidate2 = num;
                 count2++;
             }
             else if(count1 == 0){

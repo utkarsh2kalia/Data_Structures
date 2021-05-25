@@ -20,12 +20,15 @@ public class SubarraySumEqualsK {
     public int subarraySum(int nums[], int k) {
         int n = nums.length;
         Map<Integer, Integer> map = new HashMap<>();
+        // if teh first number equals k
         map.put(0, 1);
         int count = 0;
         int sum = 0;
         for (int i = 0; i < n; i++)
         {
+            // add the current number to sum
             sum += nums[i];
+            // check if any sub array with given exists
             if(map.containsKey(sum - k))
                 count += map.get(sum - k);
             map.put(sum, map.getOrDefault(sum,0)+1);
@@ -37,9 +40,9 @@ public class SubarraySumEqualsK {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1,2,3};
+        int arr[] = {1,4,-4};
         SubarraySumEqualsK obj = new SubarraySumEqualsK();
-        System.out.println(obj.subarraySum(arr, 3));
+        System.out.println(obj.subarraySum(arr, 0));
     }
 
 }

@@ -39,6 +39,23 @@ public class RemoveDuplicatesFromList2 {
             return dummy.next;
         }
 
+    Node removeDuplicates(Node head)
+    {
+        // Your code here
+        Node curr = head, prev = head;
+        while(curr!=null)
+        {
+            if(prev.data != curr.data)
+
+            {
+                prev.next = curr;
+                prev = prev.next;
+            }
+            curr = curr.next;
+        }
+        prev.next = null;
+        return head;
+    }
     public static void main(String[] args) {
         int arr[] = {1,2,2,3,3,3,5,5,6,7};
 

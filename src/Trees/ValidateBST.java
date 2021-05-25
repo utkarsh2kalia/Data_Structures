@@ -6,7 +6,7 @@ import java.util.Stack;
 
 import static Trees.InorderTraversal.maketree;
 
-public class CheckIftreeisBST {
+public class ValidateBST {
     // using stack
     public static boolean isBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
@@ -22,7 +22,7 @@ public class CheckIftreeisBST {
             // pop out
             root = stack.pop();
 
-            // prev marks the left tree data, so root should be greater than it
+            // prev marks the left tree  downwards, so root should be greater than it
             if (root.data <= prev) {
                 return false;
             }

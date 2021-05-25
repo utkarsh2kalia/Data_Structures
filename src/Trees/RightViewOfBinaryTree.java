@@ -7,13 +7,14 @@ import java.util.List;
 //(3) if reverse the visit order, that is first LEFT and then RIGHT, it will return the left view of the tree.
 
 
-public class RightViewOfBinaryTree {
+public class    RightViewOfBinaryTree {
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         rightView(root, result, 0);
         return result;
     }
 
+    // level order traversal recursive
     public void rightView(TreeNode curr, List<Integer> result, int currDepth){
         if(curr == null){
             return;
