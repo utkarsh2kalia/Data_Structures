@@ -12,14 +12,14 @@ public class MinimumSizeSubarraySum {
 
         int sum = 0, length = Integer.MAX_VALUE, left=0;
 
-        for(int i = 0; i<nums.length; i++)
+        for(int right = 0; right<nums.length; right++)
         {
             // add the number to the sum
-            sum+=nums[i];
+            sum+=nums[right];
 
             while(sum>=target){
 
-                length = Math.min(length, i +1 - left);
+                length = Math.min(length, right - left + 1);
                 sum -= nums[left++];
 
             }

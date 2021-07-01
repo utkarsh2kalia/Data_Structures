@@ -1,6 +1,7 @@
 package Backtracking;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,6 +20,44 @@ import java.util.List;
 //        [3,2,1]
 //        ]
 public class Permutations {
+
+    public List<List<Integer>> permuteAgain(int nums[]){
+
+        // a list for storing the output
+        List<List<Integer>> out = new ArrayList<>();
+        // list for storing the numbers
+        List<Integer> num = new ArrayList<Integer>();
+        for(int val: nums){
+            num.add(val);
+        }
+        int n = nums.length;
+
+        backtrackAgain(n, num, out, 0);
+
+        return out;
+
+    }
+
+    public void backtrackAgain(int n, List<Integer> num, List<List<Integer>> out, int first){
+
+
+        if(first == n) {
+            out.add(new ArrayList(num));
+            return;
+        }
+
+        for(int i = first; i<n; i++){
+
+            Collections.swap(num, i, first);
+            backtrackAgain(n, num, out, first+1);
+            Collections.swap(num, i, first);
+
+        }
+
+
+    }
+
+
     public List<List<Integer>> permute(int nums[])
     {
         List<List<Integer>> list = new LinkedList<>();
@@ -42,5 +81,6 @@ public class Permutations {
         Permutations obj = new Permutations();
         int nums[] ={1,2,3};
         System.out.println(obj.permute(nums));
+        System.out.println(obj.permuteAgain(nums));
     }
 }

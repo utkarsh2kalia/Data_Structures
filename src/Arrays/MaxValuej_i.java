@@ -4,7 +4,7 @@ package Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-//Find the maximum value of `j – i` such that `A[j] >= A[i]` in an array
+    //Find the maximum value of `j – i` such that `A[j] >= A[i]` in an array
 //Input:
 //N = 9
 //A[] = {34, 8, 10, 3, 2, 80, 30, 33, 1}

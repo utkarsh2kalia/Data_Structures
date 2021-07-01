@@ -12,7 +12,7 @@ import java.util.*;
 //have values 7, 4, and 1.
 //Note that the inputs "root" and "target" are actually TreeNodes.
 //The descriptions of the inputs above are just serializations of these objects.
-public class AllNodesDistanceKinBinaryTree1 {
+public class    AllNodesDistanceKinBinaryTree1 {
 
 
     Map<TreeNode, TreeNode> map;

@@ -10,6 +10,11 @@ class Node2{
         this.next = null;
         this.random = null;
     }
+    public Node2(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
 
 }
 //A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.

@@ -1,8 +1,6 @@
 package Backtracking;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 //Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.
 //
@@ -16,6 +14,8 @@ import java.util.List;
 //        [1,2,1],
 //        [2,1,1]]
 public class Permutations2 {
+
+
     public List<List<Integer>> permute2(int nums[])
     {
         List<List<Integer>> list = new LinkedList<>();
@@ -45,6 +45,7 @@ public class Permutations2 {
         Permutations2 obj = new Permutations2();
         int nums[] = {1,1,2};
         System.out.println(obj.permute2(nums));
+
     }
 
 }

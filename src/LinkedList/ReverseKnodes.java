@@ -6,7 +6,8 @@ import java.util.Scanner;
 import static LinkedList.LinkedList.createList;
 import static LinkedList.LinkedList.printAllNodes;
 //import static LinkedList.ReverseLinkedList.reverseList;
-
+//Input: head = [1,2,3,4,5], k = 2
+//        Output: [2,1,4,3,5]
 
 public class ReverseKnodes {
     public static Node reverseKnodes(Node head, int k)
